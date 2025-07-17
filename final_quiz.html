@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    input, button {
+      font-size: 18px;
+      margin: 10px;
+      padding: 5px 10px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <p>1 = 2</p>
+  <p>2 = 5</p>
+  <p>3 = 5</p>
+  <p>4 = ?</p>
+
+  <label for="answer">Answer: </label>
+  <input type="text" id="answer" placeholder="Type your answer">
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answer').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if (userAnswer === '4') {
+        resultDiv.textContent = "That's correct.";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "That's incorrect.";
+        resultDiv.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
